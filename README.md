@@ -88,6 +88,26 @@ To set up the Python environment for this project, follow these steps:
 
 This will install the necessary libraries listed in `requirements.txt`.
 
+<a name="execution"></a>
+### Executing Program:
+1. You can run the following commands in the project's directory to set up the database, train model and save the model.
+
+    - To run ETL pipeline to clean data and store the processed data in the database
+        ```bash
+        python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db
+        ```
+    - To run the ML pipeline that loads data from DB, trains classifier and saves the classifier as a pickle file
+        ```bash
+        python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl
+        ```
+
+2. Run the following command in the app's directory to run your web app.
+    ```bash
+    python app/run.py
+    ```
+
+3. Go to http://0.0.0.0:3001/
+
 <a name="material"></a>
 ### Additional Material
 
@@ -111,3 +131,31 @@ You can use **ML Pipeline Preparation Notebook** to re-train the model or tune i
 ## Authors
 
 * [Daniel Perdomo](https://github.com/Dalperdomoe)
+
+<a name="screenshots"></a>
+## Screenshots
+
+1. This is an example of a message we can type to test the performance of the model
+
+![Sample Input](screenshots/sample_input.png)
+
+2. After clicking **Classify Message**, we can see the categories which the message belongs to highlighted in green
+
+![Sample Output](screenshots/sample_output.png)
+
+3. The main page shows some graphs about training dataset, provided by Figure Eight
+
+![Main Page](screenshots/main_page.png)
+
+4. Sample run of process_data.py
+
+![Process Data](screenshots/process_data.png)
+
+5. Sample run of train_classifier.py
+
+![Train Classifier without Category Level Precision Recall](screenshots/train_classifier.png)
+
+6. Sample run of train_classifier.py with precision, recall etc. for each category
+
+![Train Classifier with Category Level Precision Recall](screenshots/train_classifier_category_precision_recall.png)
+
