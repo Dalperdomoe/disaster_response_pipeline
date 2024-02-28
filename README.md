@@ -1,1 +1,113 @@
-# disaster_response_pipeline
+# Disaster Response Pipeline Project
+
+![Intro Pic](screenshots/intro.png)
+
+
+## Table of Contents
+1. [Description](#description)
+2. [Getting Started](#getting_started)
+    1. [Project Structure](#structure)
+	2. [Dependencies](#dependencies)
+	3. [Setting Up](#setting-enviroment)
+	4. [Executing Program](#execution)
+	5. [Additional Material](#material)
+3. [Authors](#authors)
+5. [Screenshots](#screenshots)
+
+<a name="descripton"></a>
+## Description
+
+This Project is part of Data Science Nanodegree Program by Udacity in collaboration with Figure Eight. The dataset contains pre-labelled tweet and messages from real-life disaster events. The project aim is to build a Natural Language Processing (NLP) model to categorize messages on a real time basis.
+
+This project is divided in the following key sections:
+
+1. Processing data, building an ETL pipeline to extract data from source, clean the data and save them in a SQLite DB
+2. Build a machine learning pipeline to train the which can classify text message in various categories
+3. Run a web app which can show model results in real time
+
+<a name="getting_started"></a>
+## Getting Started
+
+<a name="structure"></a>
+### Project Structure
+
+```bash
+.
+├── app
+│   ├── run.py
+│   └── templates
+│       ├── go.html
+│       └── master.html
+├── data
+│   ├── disaster_categories.csv
+│   ├── disaster_messages.csv
+│   ├── DisasterResponse.db
+│   ├── process_data.py
+│   └── Twitter-sentiment-self-drive-DFE.csv
+├── LICENSE
+├── Makefile
+├── models
+│   └── train_classifier.py
+├── notebooks
+│   ├── ETL Pipeline Preparation.ipynb
+│   └── ML Pipeline Preparation.ipynb
+├── README.md
+├── requirements.txt
+├── screenshots
+└── test_environment.py
+```
+
+<a name="dependencies"></a>
+### Dependencies
+* Python 3.10
+* Machine Learning Libraries: NumPy, SciPy, Pandas, Sciki-Learn
+* Natural Language Process Libraries: NLTK
+* SQLlite Database Libraqries: SQLalchemy
+* Model Loading and Saving Library: Pickle
+* Web App and Data Visualization: Flask, Plotly
+
+<a name="setting-enviroment"></a>
+### Setting Up the Environment with Makefile
+
+To set up the Python environment for this project, follow these steps:
+
+1. If you have conda installed, you can create a new environment with Python 3.10 using the Makefile:
+    ```
+    make create_environment
+    ```
+
+2. This will create a conda environment named `disaster_response` with Python 3.10. You can activate this environment with:
+    ```
+    conda activate disaster_response
+    ```
+
+3. Next, install the required Python dependencies by running:
+    ```
+    make requirements
+    ```
+
+This will install the necessary libraries listed in `requirements.txt`.
+
+<a name="material"></a>
+### Additional Material
+
+In the **notebooks** folder you can find two jupyter notebook that will help you understand how the model works step by step:
+1. **ETL Preparation Notebook**: learn everything about the implemented ETL pipeline
+2. **ML Pipeline Preparation Notebook**: look at the Machine Learning Pipeline developed with NLTK and Scikit-Learn
+
+You can use **ML Pipeline Preparation Notebook** to re-train the model or tune it through a dedicated Grid Search section.
+
+<a name="importantfiles"></a>
+### Important Files
+**app/templates/***: templates/html files for web app
+
+**data/process_data.py**: Extract Train Load (ETL) pipeline used for data cleaning, feature extraction, and storing data in a SQLite database
+
+**models/train_classifier.py**: A machine learning pipeline that loads data, trains a model, and saves the trained model as a .pkl file for later use
+
+**run.py**: This file can be used to launch the Flask web app used to classify disaster messages
+
+<a name="authors"></a>
+## Authors
+
+* [Daniel Perdomo](https://github.com/Dalperdomoe)
